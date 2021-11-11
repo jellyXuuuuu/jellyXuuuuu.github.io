@@ -1,6 +1,6 @@
 # Setup
 title: Yingyu's Magic World
-url: https://getpoole.com
+url: https://jellyxuuuuu.github.io
 paginate: 1
 baseurl: ""
 permalink: pretty
@@ -32,9 +32,9 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Mark Otto
-  url: https://twitter.com/mdo
-  email: markdotto@gmail.com
+  name: Yingyu Xu
+  url: https://twitter.com/Jelly09886495
+  email: maggiexuyy2000@gmail.com
 
 # Custom vars
 version: 3.0.0
@@ -49,3 +49,6 @@ nav:
 
   - title: Project
     url: /project
+
+  - title: Image
+    url: /image
