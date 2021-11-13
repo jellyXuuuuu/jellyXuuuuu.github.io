@@ -4,4 +4,4 @@ title: Image
 ---
 
 
-![logo](\assets\images\logo.jpg)
+![logo](\assets\logo.jpg)
