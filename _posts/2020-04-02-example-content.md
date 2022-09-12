@@ -4,6 +4,7 @@ title: Example content
 ---
 
 **Howdy!** This is an example blog post that shows several types of HTML content supported in this theme.
+<<<<To back up for myself: the blog stored in D:\mymanchester\CSImage2\VMware\GitRepos\jellyXuuuuu.github.io on my computer>>>>
 {: .message }
 
 Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
