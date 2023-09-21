@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dell Fn setting
+title: Git Install Error
 ---
 
 Q: Could not install packages due to an OSError: [WinError 2] No such file or directory
