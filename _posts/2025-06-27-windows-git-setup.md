@@ -65,3 +65,7 @@ cat ~/.ssh/id_ed25519.pub  # 输出公钥内容
 ![250627-image3](\assets\250627-image3.png)
 
 ![250627-image4](\assets\250627-image4.png)
+
+
+注：如果Windows上本身没有下git，需要先下载git，并且在vscode里面配置一下
+参考[Windows+VScode配置与使用git](https://blog.csdn.net/czjl6886/article/details/122129576)
