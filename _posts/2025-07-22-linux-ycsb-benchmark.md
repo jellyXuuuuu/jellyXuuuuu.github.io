@@ -15,6 +15,7 @@ Yahoo! Cloud Serving Benchmark (YCSB) 是一个Java语言实现的主要用于�
 
 ## 前置步骤2：配置ycsb
 使用YCSB对数据库性能测试
+
 官网 [https://github.com/brianfrankcooper/YCSB/tree/master/jdbc](https://github.com/brianfrankcooper/YCSB/tree/master/jdbc)
 教程参考[https://piaohua.github.io/post/mysql/20220723-ycsb/](https://piaohua.github.io/post/mysql/20220723-ycsb/)
 
