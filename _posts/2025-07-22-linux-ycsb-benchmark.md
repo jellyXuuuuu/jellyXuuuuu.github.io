@@ -101,5 +101,87 @@ cp ./usr/share/java/mysql-connector-j-8.0.33.jar ~/xyy/ycsb-0.17.0/jdbc-binding/
 
 
 ## 修改数据库datadir（用于对比测试不同ssd上的性能）
-### 1.修改配置文件，需要修改
+### 1.修改配置文件
+需要修改
+```shell
+vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+里面的datadir
+
+以及apparmor的配置文件
+
+```shell
+vim /etc/apparmor.d/usr.sbin.mysqld
+```
+
+修改后执行
+```shell
+service apparmor restart
+```
+Ps: 企业级盘数据库datadir         = /mnt/test_ssd/mysql_data/
+
+消费级datadir         =/mnt/test_ssd_1602/mysql/
+
+apparmor设置:
+
+企业级
+```shell
+# Allow data dir access
+#  /var/lib/mysql/ r,
+#  /var/lib/mysql/** rwk,
+  /mnt/test_ssd/mysql_data/ r,
+  /mnt/test_ssd/mysql_data/** rwk,
+```
+
+手动初始化数据库命令：
+```shell
+sudo mysqld --initialize --user=mysql --datadir=/mnt/test_ssd/mysql_data
+```
+
+消费级
+```shell
+#  /var/lib/mysql/ r,
+#  /var/lib/mysql/** rwk,
+#  /mnt/test_ssd/mysql_data/ r,
+#  /mnt/test_ssd/mysql_data/** rwk,
+/mnt/test_ssd_1602/mysql/ r,
+/mnt/test_ssd_1602/mysql/** rwk,
+```
+
+手动初始化数据库命令：
+```shell
+sudo mysqld --initialize --user=mysql --datadir=/mnt/test_ssd_1602/mysql
+```
+
+### 2.修改后刷新，重启mysql服务
+```shell
+sudo systemctl stop mysql
+sudo systemctl start mysql
+```
+详情见“手动测试，重启服务”
+
+### 3.修改workload文件，增加并发以及唯一性
+例如：
+```shell
+vi /root/xyy/ycsb-0.17.0workloads/workloada
+```
+![250722-image10](\assets\250722-image10.png)
+
+threadcount只并发线程，需要增加insertorder=hased
+以及参数-p insertstart=0来避免Duplicate entry
+Error 如下：
+```shell
+Error in processing insert to table: usertablejava.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'user8753205170136912308' for key 'usertable.PRIMARY'
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+```
+
+### 手动测试，重启服务
+关闭
+```shell
+sudo systemctl stop mysql
+```
+开启
+```shell
+sudo systemctl start mysql
+```
 
