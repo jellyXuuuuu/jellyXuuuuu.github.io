@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Git Install Error
+tags: [linux, github]
 ---
 
 Q: Could not install packages due to an OSError: [WinError 2] No such file or directory

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Jitisi print fetch result
+tags: [jitisi]
 ---
 
 ![image-20210715212457263](\assets\image-20210715212457263.png)

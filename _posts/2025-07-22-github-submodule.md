@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Github 创建，引用现有的子仓库
-tags: [github]
+tags: [linux, github]
 ---
 
 # [Github] 如何在github创建仓库中引用现有的子仓库

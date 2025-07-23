@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux YCSB Benchmark
-tags: [YCSB]
+tags: [linux, YCSB]
 ---
 
 # [YCSB] 使用YCSB对数据库性能测试

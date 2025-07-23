@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Dell Fn setting
+tags: [dell]
 ---
 
 Q: 最近打开电脑按音量键等发现莫名弹出新网页窗口，没有音量键控制，并且home键print键统统失灵，还以为按键出现问题，结果最后查出来得知：

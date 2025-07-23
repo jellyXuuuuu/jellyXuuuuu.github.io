@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Jitisi初步安装运行GUI
+tags: [jitisi]
 ---
 
 task: "D:\tools\Google Chrome\chrome.exe" https://map.1tyun.ink:8903/a  这个是一个我做的Windows BAT脚本。目的是用我指定的V73版本的Chrome浏览器打开我的Jitsi视频会议平台的指定房间（a)。 ...

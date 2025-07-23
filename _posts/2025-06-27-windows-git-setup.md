@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Windows git setup problems
+tags: [windows, github]
 ---
 
 ## 场景：在windows下配置git并且在vscode中关联能够进行git追踪

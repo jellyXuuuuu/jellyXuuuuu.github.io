@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Html Photo Load
+tags: [html]
 ---
 
 HTML的图片加载不出来几大问题: 
