@@ -185,3 +185,115 @@ sudo systemctl stop mysql
 sudo systemctl start mysql
 ```
 
+#### systemctl start mysql失败
+![250722-image11](\assets\250722-image11.png)
+
+#### mysqld --initialize遇到问题
+```shell
+(py310) root@flyslice-System-Product-Name:~/xyy/test-mount# mysqld --initialize.
+... Failed to set datadir to '/root/xyy/test-mount/mysql/' (OS errno: 13 - Permission denied)
+```
+
+原因是没有权限
+```shell
+sudo chown -R mysql:mysql /root/xyy/test-mount/mysql/
+sudo chmod -R 755 /root/xyy/test-mount/mysql/
+namei -l /root/xyy/test-mount/mysql/
+```
+![250722-image12](\assets\250722-image12.png)
+建议mount到别的目录比如/mnt下，/root下权限会有问题。
+
+#### 遇到问题OS errno 17 - File exists：
+
+![250722-image13](\assets\250722-image13.png)
+
+原因是因为`apparmor`
+
+参考 [https://www.cnblogs.com/linxiyue/p/8229048.html](https://www.cnblogs.com/linxiyue/p/8229048.html)
+
+![250722-image14](\assets\250722-image14.png)
+
+修改
+```shell
+vim /etc/apparmor.d/usr.sbin.mysqld
+```
+然后重启apparmor应用更新
+```shell
+service apparmor restart
+```
+
+记得加上权限
+```shell
+sudo chown -R mysql:mysql /mnt/test_ssd/mysql_data
+sudo chmod -R 755 /mnt/test_ssd/mysql_data
+```
+检查结果，重新生成数据库需要的是数据，成功了。
+```shell
+sudo rm -rf /mnt/test_ssd/mysql_data/*
+sudo mysqld --initialize --user=mysql --datadir=/mnt/test_ssd/mysql_data
+
+ls -la /mnt/test_ssd/mysql_data
+```
+![250722-image15](\assets\250722-image15.png)
+
+可以重启mysql了。
+```shell
+sudo systemctl start mysql
+```
+
+#### 查看随机密码
+```shell
+tail /var/log/mysql/error.log
+```
+![250722-image16](\assets\250722-image16.png)
+
+```shell
+sudo mysql -uroot -p
+Bu-Jn-&5IpOv
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
+```
+
+进入mysql检查，成功修改挂载目录。
+```shell
+sudo mysql -uroot -p
+123456
+SHOW VARIABLES LIKE 'datadir';
+```
+![250722-image17](\assets\250722-image17.png)
+![250722-image18](\assets\250722-image18.png)
+![250722-image19](\assets\250722-image19.png)
+
+### 最终测试参数
+Load
+```shell
+bin/ycsb load jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties   -cp mysql-connector-java-8.0.33.jar   -p recordcount=1000000   -p insertstart=0 -s > enterprise_load.log
+```
+Run
+```shell
+bin/ycsb run jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties   -cp mysql-connector-java-8.0.33.jar   -p recordcount=1000000   -p insertstart=0 -s > enterprise_run.log
+```
+
+注：
+![250722-image20](\assets\250722-image20.png)
+
+运行完一次benchmark后需要清除数据库重新生成文件,以防重复key错误。
+```
+SELECT COUNT(*) FROM usertable;
+```
+![250722-image21](\assets\250722-image21.png)
+
+进入mysql，输入
+```mysql
+TRUNCATE TABLE usertable;
+```
+或直接输入shell
+```shell
+export MYSQL_PWD="123456"
+mysql -u root -e "USE test; TRUNCATE TABLE usertable;"
+```
+
+查看生成的表格数量
+```shell
+mysql -u root -e "USE test; SELECT COUNT(*) FROM usertable;"
+```
