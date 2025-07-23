@@ -24,16 +24,15 @@ and the repository exists.
 
 ### 解决方法：
 1. 更换为个人 SSH 密钥
-```bash
+```shell
 # 查看当前使用的 SSH 密钥
 cat ~/.ssh/id_rsa.pub  # 若这不是你的个人公钥，可继续往下操作
-
 # 生成新的 SSH 密钥（如果没有的话）
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-
 # 将新生成的公钥添加到 GitHub 账户
 cat ~/.ssh/id_rsa.pub
 ```
+
 ![250627-image1](\assets\250723-image1.png)
 ![250627-image2](\assets\250723-image2.png)
 
