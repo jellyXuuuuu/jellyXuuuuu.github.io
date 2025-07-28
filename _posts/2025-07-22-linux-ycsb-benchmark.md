@@ -302,7 +302,7 @@ mysql -u root -e "USE test; SELECT COUNT(*) FROM usertable;"
 rocksdb多用于存储元数据，作为底层性能测试更为合适。
 
 ## 步骤
-参考官网步骤:[https://github.com/brianfrankcooper/YCSB/tree/master/rocksdb](https://github.com/brianfrankcooper/YCSB/tree/master/rocksdb)
+参考[官网步骤](https://github.com/brianfrankcooper/YCSB/tree/master/rocksdb)
 
 
 ### 重新克隆YCSB库
