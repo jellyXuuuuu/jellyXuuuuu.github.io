@@ -297,3 +297,81 @@ mysql -u root -e "USE test; TRUNCATE TABLE usertable;"
 ```shell
 mysql -u root -e "USE test; SELECT COUNT(*) FROM usertable;"
 ```
+
+## 场景2：在Liunx下配置运行YCSB基准（以对接数据库rocksdb为例，基于rocksdb-binding）
+rocksdb多用于存储元数据，作为底层性能测试更为合适。
+
+## 步骤
+参考官网步骤:[https://github.com/brianfrankcooper/YCSB/tree/master/rocksdb](https://github.com/brianfrankcooper/YCSB/tree/master/rocksdb)
+
+
+### 重新克隆YCSB库
+```bash
+git clone https://github.com/brianfrankcooper/YCSB.git
+```
+
+克隆不下来网络不稳定用以下代替
+```bash
+git clone --depth 1 https://github.com/brianfrankcooper/YCSB.git
+```
+
+### 通过mvn编译rocksdb-binding
+```bash
+cd YCSB
+mvn -pl site.ycsb:rocksdb-binding -am clean package
+```
+
+
+### 前置条件：maven、python软连接
+#### maven安装
+需要用系统默认安装maven包
+```bash
+apt install maven
+```
+
+#### mvn修改换源
+查找`setting.yml`位置
+```bash
+find / -name "setting.yml"
+```
+![250722-image24](\assets\250722-image24.png)
+
+```bash
+vi /etc/maven/settings.xml
+```
+![250722-image25](\assets\250722-image25.png)
+
+```
+<mirrors>
+    <mirror>
+        <id>aliyunmaven</id>
+        <mirrorOf>*</mirrorOf>
+        <url>https://maven.aliyun.com/repository/public</url>
+    </mirror>
+</mirrors>
+```
+
+![250722-image26](\assets\250722-image26.png)
+
+验证配置:
+```bash
+mvn help:effective-settings
+```
+
+![250722-image27](\assets\250722-image27.png)
+
+
+再次运行mvn即可。
+
+
+#### 需要软连接python3到python
+```bash
+sudo ln -s /usr/bin/python3 /usr/bin/python
+```
+![250722-image22](\assets\250722-image22.png)
+
+![250722-image23](\assets\250722-image23.png)
+
+
+### 运行benchmark
+![250722-image28](\assets\250722-image28.png)
