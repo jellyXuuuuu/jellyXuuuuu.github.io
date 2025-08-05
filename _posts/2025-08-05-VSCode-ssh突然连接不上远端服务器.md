@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 复原交叉编译环境
+title: VSCode remote ssh连不上
 tags: [Liunx, ssh, vscode]
 ---
 
