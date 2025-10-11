@@ -1,0 +1,1146 @@
+D:\xyy\code\jellyXuuuuu.github.io>jekyll serve
+Resolving dependencies...
+Configuration file: D:/xyy/code/jellyXuuuuu.github.io/_config.yml
+D:/Ruby34-x64/lib/ruby/3.4.0/win32/registry.rb:2: warning: fiddle/import is found in fiddle, which will no longer be part of the default gems starting from Ruby 3.5.0.
+You can add fiddle to your Gemfile or gemspec to silence this warning.
+To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+            Source: D:/xyy/code/jellyXuuuuu.github.io
+       Destination: D:/xyy/code/jellyXuuuuu.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    done in 10.003 seconds.
+  Please add the following to your Gemfile to avoid polling for changes:
+    gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+ Auto-regeneration: enabled for 'D:/xyy/code/jellyXuuuuu.github.io'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+      Regenerating: 2 file(s) changed at 2025-10-11 11:25:55
+                    _posts/251011-image3.png
+                    _posts/image.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 3.6608818 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:26:10
+                    assets/251011-image3.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 6.0183502 seconds.
+
+      Regenerating: 2 file(s) changed at 2025-10-11 11:26:17
+                    _posts/2025-10-11本地重新部署Jekyll.md
+                    _posts/251011-image3.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 3.8350082 seconds.
+
+[2025-10-11 11:27:44] ERROR '/assets/20251010-image2.png' not found.
+[2025-10-11 11:27:44] ERROR '/assets/20251010-image1.png' not found.
+[2025-10-11 11:27:44] ERROR '/assets/20251010-image3.png' not found.
+      Regenerating: 1 file(s) changed at 2025-10-11 11:28:13
+                    assets/20251010-image1.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.7989567 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:28:15
+                    assets/251010-image1.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.5215274 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:28:36
+                    assets/251010-image1.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 2.7952591 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:28:39
+                    assets/20251010-image1.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.6241666 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:28:50
+                    _posts/2025-10-10-任务清单整理-分布式存储学习.md
+           Warning: The <noscript> tag for your gist 13f94b734a4ddb132735
+                    could not be generated. This will affect users who do
+                    not have JavaScript enabled in their browsers.
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 5.4143044 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:29:01
+                    _posts/2025-10-10-任务清单整理-分布式存储学习.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.4399519 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:29:28
+                    _posts/2025-10-11本地重新部署Jekyll.md
+D:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-embedded-1.93.2-x64-mingw-ucrt/lib/sass/compiler/connection.rb:54: warning: Failed to init NativeSymbolResolver (SymInitialize 3221225476)
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.7712589 seconds.
+
+      Regenerating: 2 file(s) changed at 2025-10-11 11:29:37
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+                    _posts/2025-10-11本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.8434182 seconds.
+
+D:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/sass-embedded-1.93.2-x64-mingw-ucrt/lib/sass/compiler/connection.rb:54: warning: Failed to shutdown NativeSymbolResolver (SymCleanup  6)
+      Regenerating: 1 file(s) changed at 2025-10-11 11:31:26
+                    _posts/image.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 3.4910829 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:31:45
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 2.1520781 seconds.
+
+      Regenerating: 2 file(s) changed at 2025-10-11 11:31:49
+                    _posts/251011-image4.png
+                    _posts/image.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 3.4500652 seconds.
+
+      Regenerating: 2 file(s) changed at 2025-10-11 11:31:52
+                    assets/251011-image4.png
+                    _posts/251011-image4.png
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 2.0794101 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:32:08
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 3.7957858 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:32:24
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 2.120949 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:33:32
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.7792525 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:33:42
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 2.0628736 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:33:46
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 1.748191 seconds.
+
+      Regenerating: 1 file(s) changed at 2025-10-11 11:34:38
+                    _posts/2025-10-11-本地重新部署Jekyll.md
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+15 │ @import "variables";
+   │         ^^^^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 15:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+16 │ @import "base";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 16:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+17 │ @import "type";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 17:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+18 │ @import "syntax";
+   │         ^^^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 18:9  root stylesheet
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+19 │ @import "code";
+   │         ^^^^^^
+   ╵
+    D:\xyy\code\jellyXuuuuu.github.io\styles.scss 19:9  root stylesheet
+Warning: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 3.4729256 seconds.

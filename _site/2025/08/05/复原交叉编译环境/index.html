@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      复原交叉编译环境 &middot; Yingyu's Magic World
+    
+  </title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="Yingyu's Magic World" href="/atom.xml">
+<!-- ///////////////////////////fzh -->
+        <!-- files -->
+        
+        <link href="/assets/css/magnific-popup.css" rel="stylesheet">
+        <link href="/assets/css/owl.carousel.css" rel="stylesheet">
+        <link href="/assets/css/owl.carousel.theme.min.css" rel="stylesheet">
+        <link href="/assets/css/ionicons.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+
+
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\fzh -->
+
+
+
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="复原交叉编译环境" />
+<meta name="author" content="Yingyu Xu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="场景：因为原本的交叉编译服务器坏了，需要在新的环境下移植相同环境" />
+<meta property="og:description" content="场景：因为原本的交叉编译服务器坏了，需要在新的环境下移植相同环境" />
+<link rel="canonical" href="http://localhost:4000/2025/08/05/%E5%A4%8D%E5%8E%9F%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/" />
+<meta property="og:url" content="http://localhost:4000/2025/08/05/%E5%A4%8D%E5%8E%9F%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/" />
+<meta property="og:site_name" content="Yingyu’s Magic World" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-05T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="复原交叉编译环境" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yingyu Xu","url":"https://twitter.com/Jelly09886495"},"dateModified":"2025-08-05T00:00:00+08:00","datePublished":"2025-08-05T00:00:00+08:00","description":"场景：因为原本的交叉编译服务器坏了，需要在新的环境下移植相同环境","headline":"复原交叉编译环境","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/08/05/%E5%A4%8D%E5%8E%9F%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/"},"url":"http://localhost:4000/2025/08/05/%E5%A4%8D%E5%8E%9F%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+  <body>
+    
+      <!-- Site Header -->
+        <div class="site-header-bg">
+            <div class="container">
+                <div class="row">
+                    <!-- Add a Uni photo -->
+                    <div class="col-sm-6">
+                        <img src="/assets/logo.png" sizes="(media-condition) width" alt="logo">
+                    </div>
+                    <nav class="nav"><small>          By Yingyu Xu, ‎14 ‎January ‎2021</small></nav>
+                    <!-- <div class="col-sm-3 col-sm-offset-3 text-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search now!">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-robot" type="button">Search</button>
+                                </span>
+                            </div> 
+                        </form> --><!-- /input-group -->
+                    <a href="/tags">Tags</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+      <div class="container content">
+
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Yingyu's Magic World</a>
+
+          <nav class="nav">
+            
+            <small><a href="/archive">Blog</a></small>
+            
+            <small><a href="/about">About</a></small>
+            
+            <small><a href="/project">Project</a></small>
+            
+            <small><a href="/image">Image</a></small>
+            
+          </nav>
+          
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">复原交叉编译环境</h1>
+  <time datetime="2025-08-05T00:00:00+08:00" class="post-date">05 Aug 2025</time>
+  <h2 id="场景因为原本的交叉编译服务器坏了需要在新的环境下移植相同环境">场景：因为原本的交叉编译服务器坏了，需要在新的环境下移植相同环境</h2>
+
+<h3 id="步骤方法">步骤方法</h3>
+<h4 id="前置条件新环境安装docker">前置条件：新环境安装docker</h4>
+
+<p><a href="https://blog.csdn.net/weixin_44355653/article/details/140267707">https://blog.csdn.net/weixin_44355653/article/details/140267707</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 部署安装Docker</span>
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get upgrade
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>ca-certificates curl gnupg lsb-release
+curl <span class="nt">-fsSL</span> http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu </span><span class="si">$(</span>lsb_release <span class="nt">-cs</span><span class="si">)</span><span class="s2"> stable"</span>
+apt-get <span class="nb">install </span>docker-ce docker-ce-cli containerd.io
+systemctl start docker
+<span class="nb">sudo </span>apt-get <span class="nt">-y</span> <span class="nb">install </span>apt-transport-https ca-certificates curl software-properties-common
+service docker restart
+<span class="nb">sudo </span>docker run hello-world
+<span class="nb">sudo </span>docker version
+<span class="nb">sudo </span>docker images
+</code></pre></div></div>
+<h4 id="注配置-docker-使用华为云加速器">注：配置 Docker 使用华为云加速器：</h4>
+<p>需要修改 Docker 的配置文件来使用华为云的加速器。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nano /etc/docker/daemon.json
+<span class="o">{</span> <span class="s2">"registry-mirrors"</span>: <span class="o">[</span><span class="s2">"https://&lt;你的加速器地址&gt;.mirror.huaweicloud.com"</span><span class="o">]</span> <span class="o">}</span> <span class="o">{</span> <span class="s2">"registry-mirrors"</span>: <span class="o">[</span> <span class="s2">"https://fb780aceeee34f50a96eea0b0b878c89.mirror.swr.myhuaweicloud.com"</span> <span class="o">]</span> <span class="o">}</span>
+</code></pre></div></div>
+<p>61.249上参考配置：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /etc/docker/daemon.json
+<span class="o">{</span>
+  <span class="s2">"registry-mirrors"</span>: <span class="o">[</span>
+           <span class="s2">"https://fb780aceeee34f50a96eea0b0b878c89.mirror.swr.myhuaweicloud.com"</span>,
+    <span class="s2">"https://registry.aliyuncs.com"</span>,
+                <span class="s2">"https://docker.mirrors.ustc.edu.cn"</span>
+         <span class="o">]</span>,
+  <span class="s2">"exec-opts"</span>: <span class="o">[</span><span class="s2">"native.cgroupdriver=systemd"</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>而后再次重启服务，测试docker是否正常运行。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service docker restart
+<span class="nb">sudo </span>docker run hello-world
+</code></pre></div></div>
+
+<h4 id="1-打包原本环境的文件夹移植到新环境的docker挂载目录下面homeflysliceroujia-compiler">1. 打包原本环境的文件夹,移植到新环境的docker挂载目录下面(/home/flyslice/roujia-compiler)</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /home/flyslice/roujia-compiler-dir
+root@flyslice-System-Product-Name:/mnt/data_disk/home/flyslice/roujia-compiler-dir# <span class="nb">tar</span> <span class="nt">-czvf</span> poky_sdk.tar.gz poky_sdk/
+<span class="nb">gunzip </span>poky_sdk.tar.gz poky_sdk.tar
+<span class="nb">tar</span> <span class="nt">-xf</span> poky_sdk.tar <span class="nt">-C</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<h4 id="2built新docker">2.built新docker</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>docker load <span class="nt">-i</span> roujia-compiler-asan-backup.tar
+</code></pre></div></div>
+<p><img src="\assets\250805-image1png" alt="250805-image1" /></p>
+
+<h4 id="3创新docker-运行">3.创新docker 运行</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>docker run <span class="nt">-v</span> /home/flyslice/roujia-compiler:/home/flyslice <span class="nt">-it</span> <span class="nt">--name</span> roujia-compiler-container roujia-compiler-asan-backup:v1.0.0 bash
+</code></pre></div></div>
+
+<p>根据之前的步骤，即可运行。
+<img src="\assets\250805-image2.png" alt="250805-image2" /></p>
+
+<h4 id="ps需要修改权限">ps：需要修改权限</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo chown</span> <span class="nt">-R</span> flyslice:flyslice /home/flyslice/roujia-compiler
+</code></pre></div></div>
+
+<h3 id="总结">总结：</h3>
+<p>文件打包直接load不行，因为没有存成image，不过可以用之前docker save下来那个镜像，然后把这个poky_sdk文件夹解压放在dockers挂载目录下就能用了。</p>
+
+<h3 id="249交叉编译步骤">【249交叉编译步骤】</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 容器外下载git clone源代码：
+（注意使用flyslice用户，不要使用root用户！！！）
+（注意使用库上最新代码！！！）
+在/home/flyslice/roujia-compiler-dir/目录下创建自己的工作目录
+git clone http://git.flyslice.com/zhangbin/Roujia.git
+cd Roujia
+git submodule update --init
+2. 进入容器进行编译：
+(如果没有启动容器，如环境重启了，需要start： sudo docker start roujia-compiler-container)
+sudo docker exec -it roujia-compiler-container bash
+source ~/poky_sdk/environment-setup-armv8a-poky-linux
+cd Roujia (对应工作目录)
+CC=$CC CPP=$CPP CXX=$CXX AR=$AR CCAR=$AR LD=$LD STRIP=$STRIP ./configure --cross-prefix=aarch64-poky-linux --target-arch=armv8-a+crc --enable-fpga-nvmf --enable-fpga-ha --enable-nvme-hmb --disable-fpga-stub --disable-ec-superblock --enable-asan --enable-debug --with-dpdk --enable-coverage 
+make SKIP_DPDK_BUILD=1 -j16
+</code></pre></div></div>
+
+
+</article>
+
+
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2025/10/11/%E6%9C%AC%E5%9C%B0%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2Jekyll/">
+          Jekyll安装windowsh环境(重制)
+          <small><time datetime="2025-10-11T00:00:00+08:00">11 Oct 2025</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2025/10/10/%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E6%95%B4%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AD%A6%E4%B9%A0/">
+          分布式存储学习任务清单
+          <small><time datetime="2025-10-10T00:00:00+08:00">10 Oct 2025</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2025/08/05/VSCode-ssh%E7%AA%81%E7%84%B6%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8A%E8%BF%9C%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+          VSCode remote ssh连不上
+          <small><time datetime="2025-08-05T00:00:00+08:00">05 Aug 2025</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      <footer class="footer">
+        <small>
+          &copy;
+          <time datetime="2025-10-11T11:40:33+08:00"
+            >2025</time
+          >. All rights reserved. Designed by Yingyu Xu.
+        </small>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Jekyll安装windowsh环境(重制) &middot; Yingyu's Magic World
+    
+  </title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="Yingyu's Magic World" href="/atom.xml">
+<!-- ///////////////////////////fzh -->
+        <!-- files -->
+        
+        <link href="/assets/css/magnific-popup.css" rel="stylesheet">
+        <link href="/assets/css/owl.carousel.css" rel="stylesheet">
+        <link href="/assets/css/owl.carousel.theme.min.css" rel="stylesheet">
+        <link href="/assets/css/ionicons.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+
+
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\fzh -->
+
+
+
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Jekyll安装windowsh环境(重制)" />
+<meta name="author" content="Yingyu Xu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="安装步骤 重新部署本地Windows+jekyll环境" />
+<meta property="og:description" content="安装步骤 重新部署本地Windows+jekyll环境" />
+<link rel="canonical" href="http://localhost:4000/2025/10/11/%E6%9C%AC%E5%9C%B0%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2Jekyll/" />
+<meta property="og:url" content="http://localhost:4000/2025/10/11/%E6%9C%AC%E5%9C%B0%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2Jekyll/" />
+<meta property="og:site_name" content="Yingyu’s Magic World" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-11T00:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jekyll安装windowsh环境(重制)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yingyu Xu","url":"https://twitter.com/Jelly09886495"},"dateModified":"2025-10-11T00:00:00+08:00","datePublished":"2025-10-11T00:00:00+08:00","description":"安装步骤 重新部署本地Windows+jekyll环境","headline":"Jekyll安装windowsh环境(重制)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2025/10/11/%E6%9C%AC%E5%9C%B0%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2Jekyll/"},"url":"http://localhost:4000/2025/10/11/%E6%9C%AC%E5%9C%B0%E9%87%8D%E6%96%B0%E9%83%A8%E7%BD%B2Jekyll/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+  <body>
+    
+      <!-- Site Header -->
+        <div class="site-header-bg">
+            <div class="container">
+                <div class="row">
+                    <!-- Add a Uni photo -->
+                    <div class="col-sm-6">
+                        <img src="/assets/logo.png" sizes="(media-condition) width" alt="logo">
+                    </div>
+                    <nav class="nav"><small>          By Yingyu Xu, ‎14 ‎January ‎2021</small></nav>
+                    <!-- <div class="col-sm-3 col-sm-offset-3 text-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search now!">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-robot" type="button">Search</button>
+                                </span>
+                            </div> 
+                        </form> --><!-- /input-group -->
+                    <a href="/tags">Tags</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+      <div class="container content">
+
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Yingyu's Magic World</a>
+
+          <nav class="nav">
+            
+            <small><a href="/archive">Blog</a></small>
+            
+            <small><a href="/about">About</a></small>
+            
+            <small><a href="/project">Project</a></small>
+            
+            <small><a href="/image">Image</a></small>
+            
+          </nav>
+          
+        </h3>
+      </header>
+
+      <main>
+        <article class="post">
+  <h1 class="post-title">Jekyll安装windowsh环境(重制)</h1>
+  <time datetime="2025-10-11T00:00:00+08:00" class="post-date">11 Oct 2025</time>
+  <h2 id="安装步骤">安装步骤</h2>
+<p>重新部署本地Windows+jekyll环境</p>
+
+<ol>
+  <li>
+    <p>官网上下载ruby: <a href="https://rubyinstaller.org/downloads/">https://rubyinstaller.org/downloads/</a>
+一般安装完<code class="language-plaintext highlighter-rouge">Ruby</code>后会自动弹出一个新的命令行安装界面，我们需要在里面选择 3，然后回车。
+<img src="\assets\251011-image1.png" alt="251011-image1" /></p>
+  </li>
+  <li>然后进行安装
+退出的话cmd中输入<code class="language-plaintext highlighter-rouge">&gt;ridk install</code>可重新进入界面
+输出以下信息即成功安装
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Install MSYS2 and MINGW development toolchain succeeded
+</code></pre></div>    </div>
+  </li>
+  <li>安装jekyll
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll bundler
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><img src="\assets\251011-image2.png" alt="251011-image2" /></p>
+
+<h3 id="遇到报错1">遇到报错1</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Configuration file: D:/xyy/code/jellyXuuuuu.github.io/_config.yml
+  Dependency Error: Yikes! It looks like you don<span class="s1">'t have jekyll-gist or one of its dependencies installed. In order to use Jekyll as currently configured, you'</span>ll need to <span class="nb">install </span>this gem. If you<span class="s1">'ve run Jekyll with `bundle exec`, ensure that you have included the jekyll-gist gem in your Gemfile as well. The full error message from Ruby is: '</span>cannot load such file <span class="nt">--</span> jekyll-gist<span class="s1">' If you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!
+                    ------------------------------------------------
+      Jekyll 4.4.1   Please append `--trace` to the `serve` command
+                     for any additional information or backtrace.
+                    ------------------------------------------------
+</span></code></pre></div></div>
+
+<h3 id="遇到报错2">遇到报错2</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:/Ruby34-x64/lib/ruby/3.4.0/win32/registry.rb:2: warning: fiddle/import is found <span class="k">in </span>fiddle, which will no longer be part of the default gems starting from Ruby 3.5.0.
+You can add fiddle to your Gemfile or gemspec to silence this warning.
+To use retry middleware with Faraday v2.0+, <span class="nb">install</span> <span class="sb">`</span>faraday-retry<span class="sb">`</span> gem
+  Dependency Error: Yikes! It looks like you don<span class="s1">'t have jekyll-paginate or one of its dependencies installed. In order to use Jekyll as currently configured, you'</span>ll need to <span class="nb">install </span>this gem. If you<span class="s1">'ve run Jekyll with `bundle exec`, ensure that you have included the jekyll-paginate gem in your Gemfile as well. The full error message from Ruby is: '</span>cannot load such file <span class="nt">--</span> jekyll-paginate<span class="s1">' If you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!
+                    ------------------------------------------------
+      Jekyll 4.4.1   Please append `--trace` to the `serve` command
+                     for any additional information or backtrace.
+                    ------------------------------------------------
+</span></code></pre></div></div>
+
+<h4 id="方式一-直接安装所缺的gem包">方式一: 直接安装所缺的gem包</h4>
+<ul>
+  <li>安装<code class="language-plaintext highlighter-rouge">jekyll-gist</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll-gist
+</code></pre></div>    </div>
+  </li>
+  <li>安装<code class="language-plaintext highlighter-rouge">jekyll-paginate</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll-paginate
+</code></pre></div>    </div>
+  </li>
+  <li>安装<code class="language-plaintext highlighter-rouge">jekyll-paginate</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll-seo-tag
+</code></pre></div>    </div>
+  </li>
+  <li>本项目所需gem:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll:4.4.1 jekyll-gist jekyll-paginate jekyll-seo-tag
+</code></pre></div>    </div>
+    <p><img src="\assets\251011-image3.png" alt="251011-image3" /></p>
+  </li>
+  <li>如果网络波动较大，可增加国内源:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 先移除旧源（不管之前是哪个，确保只留一个新源）</span>
+gem sources <span class="nt">--remove</span> https://mirrors.aliyun.com/rubygems/
+<span class="c"># 添加腾讯云镜像源</span>
+gem sources <span class="nt">--add</span> https://mirrors.tencent.com/rubygems/
+<span class="c"># 查看当前源，确保只有腾讯云这一个</span>
+gem sources
+</code></pre></div>    </div>
+    <p>(可选)清理bundle旧缓存，避免残留依赖影响分析</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle clean <span class="nt">--force</span>
+</code></pre></div>    </div>
+  </li>
+  <li>运行serve
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll serve
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>最后直接访问<code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code>
+<img src="\assets\251011-image4.png" alt="251011-image4" /></p>
+
+<p>注: 运行jekyll serve后有很多warning，但看起来不影响运行
+日志见<a href="\assets\jekyll启动日志.log">jekyll启动日志.log</a></p>
+
+<h4 id="方式二尝试失败">方式二(尝试失败):</h4>
+
+<p>增加Gemfile文件:</p>
+<pre><code class="language-Gemfile">source "https://mirrors.aliyun.com/rubygems/"  # 必须是国内源，避免网络问题
+gem "jekyll", "~&gt; 4.4.1"  # 与你使用的 Jekyll 版本匹配
+gem "jekyll-gist"
+gem "jekyll-paginate"  # 必须包含，且无拼写错误
+gem "jekyll-seo-tag"   # 配置中用到的 seo 插件，也要加进来
+</code></pre>
+<p>在命令行执行以下命令, 彻底清理旧依赖并重新安装:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. 删除旧的依赖锁定文件</span>
+del Gemfile.lock
+<span class="c"># 2. 重新安装所有依赖（包括 jekyll-paginate 和 jekyll-seo-tag）</span>
+bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>运行serve</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
+
+</article>
+
+
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2025/10/10/%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95%E6%95%B4%E7%90%86-%E5%88%86%E5%B8%83%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AD%A6%E4%B9%A0/">
+          分布式存储学习任务清单
+          <small><time datetime="2025-10-10T00:00:00+08:00">10 Oct 2025</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2025/08/05/%E5%A4%8D%E5%8E%9F%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/">
+          复原交叉编译环境
+          <small><time datetime="2025-08-05T00:00:00+08:00">05 Aug 2025</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2025/08/05/VSCode-ssh%E7%AA%81%E7%84%B6%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8A%E8%BF%9C%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+          VSCode remote ssh连不上
+          <small><time datetime="2025-08-05T00:00:00+08:00">05 Aug 2025</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+
+
+      </main>
+
+      <footer class="footer">
+        <small>
+          &copy;
+          <time datetime="2025-10-11T11:40:33+08:00"
+            >2025</time
+          >. All rights reserved. Designed by Yingyu Xu.
+        </small>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

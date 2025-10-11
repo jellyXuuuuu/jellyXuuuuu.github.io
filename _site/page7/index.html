@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Jelly's Home &middot; Yingyu's Magic World
+    
+  </title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="Yingyu's Magic World" href="/atom.xml">
+<!-- ///////////////////////////fzh -->
+        <!-- files -->
+        
+        <link href="/assets/css/magnific-popup.css" rel="stylesheet">
+        <link href="/assets/css/owl.carousel.css" rel="stylesheet">
+        <link href="/assets/css/owl.carousel.theme.min.css" rel="stylesheet">
+        <link href="/assets/css/ionicons.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
+
+
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\fzh -->
+
+
+
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Jelly’s Home" />
+<meta name="author" content="Yingyu Xu" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/page7/" />
+<meta property="og:url" content="http://localhost:4000/page7/" />
+<meta property="og:site_name" content="Yingyu’s Magic World" />
+<meta property="og:type" content="website" />
+<link rel="prev" href="http://localhost:4000/page6" />
+<link rel="next" href="http://localhost:4000/page8" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jelly’s Home" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Yingyu Xu","url":"https://twitter.com/Jelly09886495"},"headline":"Jelly’s Home","url":"http://localhost:4000/page7/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+  <body>
+    
+      <!-- Site Header -->
+        <div class="site-header-bg">
+            <div class="container">
+                <div class="row">
+                    <!-- Add a Uni photo -->
+                    <div class="col-sm-6">
+                        <img src="/assets/logo.png" sizes="(media-condition) width" alt="logo">
+                    </div>
+                    <nav class="nav"><small>          By Yingyu Xu, ‎14 ‎January ‎2021</small></nav>
+                    <!-- <div class="col-sm-3 col-sm-offset-3 text-right">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search now!">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-robot" type="button">Search</button>
+                                </span>
+                            </div> 
+                        </form> --><!-- /input-group -->
+                    <a href="/tags">Tags</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+      <div class="container content">
+
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Yingyu's Magic World</a>
+
+          <nav class="nav">
+            
+            <small><a href="/archive">Blog</a></small>
+            
+            <small><a href="/about">About</a></small>
+            
+            <small><a href="/project">Project</a></small>
+            
+            <small><a href="/image">Image</a></small>
+            
+          </nav>
+          
+        </h3>
+      </header>
+
+      <main>
+        <p>*Welcome page*</p>
+<!-- <div class="posts">
+  
+  <article class="post">
+    <h1 class="post-title">
+      <a href="/2025/07/22/github-submodule/">
+        Github 创建，引用现有的子仓库
+      </a>
+    </h1>
+
+    <time datetime="2025-07-22T00:00:00+08:00" class="post-date">22 Jul 2025</time>
+
+    <h1 id="github-如何在github创建仓库中引用现有的子仓库">[Github] 如何在github创建仓库中引用现有的子仓库</h1>
+
+<p>要在 GitHub 仓库中引用现有的子仓库，通常有两种方法：Git 子模块（Git Submodules）和 Git 子树（Git Subtrees）。此处仅进行 子模块 方法介绍。</p>
+
+<h2 id="方法一使用-git-子模块推荐">方法一：使用 Git 子模块（推荐）</h2>
+
+<h3 id="步骤-1添加子模块">步骤 1：添加子模块</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git submodule add &lt;子仓库URL&gt; &lt;本地路径&gt;
+<span class="c"># 示例：将 my-subrepo 仓库添加到 main-repo 的 sub/ 目录下</span>
+git submodule add https://github.com/用户名/my-subrepo.git sub/
+</code></pre></div></div>
+
+<p>因为部署原因，我这里想把YCSB公共库创建为我的子库，因此可以先fork YCSB公共库然后再进行git submodule add</p>
+
+<h3 id="步骤-2提交更改">步骤 2：提交更改</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .gitmodules sub/
+git commit <span class="nt">-m</span> <span class="s2">"添加子模块 my-subrepo"</span>
+git push origin main
+</code></pre></div></div>
+
+<h3 id="步骤-3克隆包含子模块的仓库">步骤 3：克隆包含子模块的仓库</h3>
+<p>当其他人克隆主仓库时，需要额外参数来初始化子模块：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--recurse-submodules</span> &lt;主仓库URL&gt;
+<span class="c"># 或者克隆后手动初始化</span>
+git clone &lt;主仓库URL&gt;
+<span class="nb">cd </span>主仓库目录
+git submodule init  <span class="c"># 初始化配置</span>
+git submodule update  <span class="c"># 拉取子模块代码</span>
+</code></pre></div></div>
+
+  </article>
+  
+</div> -->
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page8">Older</a>
+  
+  
+    <a class="pagination-item newer" href="/page6">Newer</a>
+  
+</div>
+
+      </main>
+
+      <footer class="footer">
+        <small>
+          &copy;
+          <time datetime="2025-10-11T11:40:33+08:00"
+            >2025</time
+          >. All rights reserved. Designed by Yingyu Xu.
+        </small>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
