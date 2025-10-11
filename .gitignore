@@ -1,0 +1,5 @@
+# .gitignore 文件内容
+_site/
+_site/*          # 排除自动生成的静态文件目录
+.jekyll-cache/  # 排除 Jekyll 缓存目录
+Gemfile.lock    # （可选）依赖锁定文件，也可根据需求决定是否排除
