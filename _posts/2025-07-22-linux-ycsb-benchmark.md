@@ -51,12 +51,12 @@ db.passwd=123456
 ```
 
 创建test数据表，创建新的dataset
-```mysql
+```sql
 SHOW DATABASES;
 ```
 ![250722-image5](\assets\250722-image5.png)
 
-```mysql
+```sql
 CREATE DATABASE test;
 USE test;
 CREATE TABLE usertable (
@@ -284,7 +284,7 @@ SELECT COUNT(*) FROM usertable;
 ![250722-image21](\assets\250722-image21.png)
 
 进入mysql，输入
-```mysql
+```sql
 TRUNCATE TABLE usertable;
 ```
 或直接输入shell
