@@ -4,7 +4,7 @@
 .page,
 .post {
   margin-bottom: 4em;
-  max-width: 75ch; // 限制每行优化阅读体验，限制最大字符宽度
+  max-width: 175ch; // 限制每行优化阅读体验，限制最大字符宽度
   margin-left: auto;
   margin-right: auto;
   padding: 0 var(--spacer-sm, 1rem);
