@@ -182,3 +182,38 @@ Recovery的处理是：
 针对`test_v1 volume`查询状态不是`OK`的shard
 遍历shard中的replica，对于状态不是`OK`的slave replica
 给这个slave replica所在机器的pfstore发送recovery_replica，让其从primary拷贝数据恢复数据该slave replica
+
+## 251020
+*分析代码(2)*
+### main流程整理
+`conductor`的初始化流程如下图:
+![251020-image1](\assets\251020-image1.png)
+
+```java
+ClusterManager.zkBaseDir = "/pureflash/"+clusterName;
+ClusterManager.registerAsConductor(managmentIp, zkIp);
+ClusterManager.waitToBeMaster(managmentIp);
+S5Database.getInstance().init(cfg);
+ClusterManager.zkHelper.createZkNodeIfNotExist(ClusterManager.zkBaseDir + "/stores", null);
+ClusterManager.watchStores();
+ClusterManager.updateStoresFromZk();
+ClusterManager.zkHelper.createZkNodeIfNotExist(ClusterManager.zkBaseDir + "/shared_disks", null);
+ClusterManager.watchSharedDisks();
+ClusterManager.updateSharedDisksFromZk();
+```
+- 解释以上代码:
+
+| 从zk服务中读取目录路径`zkBaseDir`
+| 注册`conductor`
+| 注册`leader conductor`
+| `S5Database.getInstance().init(cfg)` - `.init(cfg)`：这是对`getInstance()`返回的实例对象调用`init`方法，作用是初始化数据库。
+| 注册节点进zk
+| zk加`watchStores`
+| zk加`updateStoresFromZk`
+| (shared) zk加`watchSharedDisks`
+| (shared) zk加`updateSharedDisksFromZk`
+
+`getInstance()`方法是返回一个`S5Database instance`, 一个`S5Database`类的实例. (`jconductor/src/com/netbric/s5/orm/S5Database.java`)
+
+### `prepareVolume`是用于`open_volume`, `recoveryVolume`, `moveVolume`的
+
