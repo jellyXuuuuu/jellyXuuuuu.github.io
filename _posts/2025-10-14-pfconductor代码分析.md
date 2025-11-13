@@ -4,172 +4,7 @@ title: pfconductor代码分析
 tags: [Pureflash, conductor, 分布式存储]
 ---
 
-## 目标/任务: 查看com/netbric/s5/conductor/handler/S5RestfulHandler.java，看看还有什么命令，如果pfccli没有实现，思考应该怎么实现
-
-### S5RestfulHandler.java
-这是一个服务接口，用于后端可以操作volume/shard/replica等
-
-尝试增加新接口'list_post'
-在`CliMian`文件里添加以下代码
-```java
-static void cmd_list_port(Namespace cmd, Config cfg) throws Exception {
-		// ListNodePortReply r = SimpleHttpRpc.invokeConductor(cfg, "list_port", "192.168.61.143", ListNodePortReply.class);
-		ListNodePortReply r = SimpleHttpRpc.invokeConductor(cfg, "list_port", ListNodePortReply.class);
-		if(r.retCode == RetCode.OK)
-		logger.info("Succeed list_store");
-		else
-			throw new IOException(String.format("Failed to list_port , code:%d, reason:%s", r.retCode, r.reason));
-		String [] header = { "IP Address", "Store Id", "Status"};
-
-		String[][] data = new String[r.Ports.size()][];
-		for(int i=0;i<r.Ports.size();i++) {
-			data[i] = new String[]{ r.Ports.get(i).ip_addr, Long.toString(r.Ports.get(i).store_id), r.Ports.get(i).status };
-		}
-		ASCIITable.getInstance().printTable(header, data);
-	}
-```
-
-发现需要增加对于的java类`ListNodePortReply`
-/home/flyslice/yangxiao/cocalele/jconductor/src/com/netbric/s5/conductor/rpc/ListNodePortReply.java
-
-```java
-package com.netbric.s5.conductor.rpc;
-
-import com.netbric.s5.orm.Port;
-
-import java.util.List;
-
-public class ListNodePortReply extends RestfulReply {
-
-    public List<Port> Ports;
-    
-
-    public ListNodePortReply(String op) {
-        super(op);
-    }
-
-    public ListNodePortReply(String op, int retCode, String reason) {
-        super(op, retCode, reason);
-    }
-    public ListNodePortReply(String op, List<Port> Ports) {
-        super(op);
-        this.Ports = Ports;
-    }
-}
-
-```
-
-目前这样的修改，编译可以通过
-```bash
-ant -f jconductor.xml
-```
-![251015-image1](\assets\251015-image1.png)
-但是运行结果还有问题(10.15待解决):
-```bash
-root@node2:/home/flyslice/yangxiao/cocalele/jconductor# ./pfcli list_port
-[main] ERROR com.netbric.s5.conductor.rpc.SimpleHttpRpc - Failed http GET http://192.168.61.229:49180/s5c/?op=list_port
-java.io.IOException: Failed RPC invoke, code:2, reason:Invalid argument: node_name
-	at com.netbric.s5.conductor.rpc.SimpleHttpRpc.invokeGET(SimpleHttpRpc.java:60)
-	at com.netbric.s5.conductor.rpc.SimpleHttpRpc.invokeConductor(SimpleHttpRpc.java:90)
-	at com.netbric.s5.cli.CliMain.cmd_list_port(CliMain.java:357)
-	at com.netbric.s5.cli.CliMain$4.run(CliMain.java:134)
-	at com.netbric.s5.cli.CliMain.main(CliMain.java:211)
-[main] ERROR com.netbric.s5.cli.CliMain - Failed: Failed RPC invoke, code:2, reason:Invalid argument: node_name
-```
-
-解决思路: 增加`node_name`参数
-```java
-ListNodePortReply r = SimpleHttpRpc.invokeConductor(cfg, "list_port", ListNodePortReply.class,
-						"node_name", "192.168.61.143");
-```
-然后发现这里原本serve端的代码`jconductor/src/com/netbric/s5/conductor/handler/StoreHandler.java`中是查询`node_name`, 但目前环境上没有配, 所以尝试改成id(也可以改成ip, 但id是唯一标识机器的, 用id更加准确)
-
-
-![251015-image2](\assets\251015-image2.png)
-```sql
-MariaDB [s5]> select * from t_store;
-+----+------+------+-------+----------------+--------+
-| id | name | sn   | model | mngt_ip        | status |
-+----+------+------+-------+----------------+--------+
-|  1 | NULL | NULL | NULL  | 192.168.61.229 | OK     |
-|  2 | NULL | NULL | NULL  | 192.168.61.143 | OK     |
-|  3 | NULL | NULL | NULL  | 192.168.61.122 | OK     |
-+----+------+------+-------+----------------+--------+
-```
-
-- 增加`id`参数
-```java
-String id = cmd.getString("i");
-ListNodePortReply r = SimpleHttpRpc.invokeConductor(cfg, "list_port", ListNodePortReply.class,
-						"id", id);
-```
-- 对于cli参数
-```bash
-./pfcli list_port -i 1
-```
-
-发现修改serve `jconductor/src/com/netbric/s5/conductor/handler/StoreHandler.java`文件内容没有生效，怀疑是因为这个是pfc服务，应该重启pfconductor服务才能生效 - 尝试重启pfconductor serve端仍然报错
-| 报错如下:
-```bash
-root@node2:/home/flyslice/yangxiao/cocalele/jconductor# ./pfcli list_port
-[main] ERROR com.netbric.s5.conductor.rpc.SimpleHttpRpc - Failed http GET http://192.168.61.229:49180/s5c/?op=list_port&id=1
-java.io.IOException: Failed RPC invoke, code:2, reason:Invalid argument: node_name
-	at com.netbric.s5.conductor.rpc.SimpleHttpRpc.invokeGET(SimpleHttpRpc.java:60)
-	at com.netbric.s5.conductor.rpc.SimpleHttpRpc.invokeConductor(SimpleHttpRpc.java:90)
-	at com.netbric.s5.cli.CliMain.cmd_list_port(CliMain.java:357)
-	at com.netbric.s5.cli.CliMain$4.run(CliMain.java:134)
-	at com.netbric.s5.cli.CliMain.main(CliMain.java:211)
-[main] ERROR com.netbric.s5.cli.CliMain - Failed: Failed RPC invoke, code:2, reason:Invalid argument: node_name
-```
-* 启动 pfconductor
-
-```bash
-source /home/flyslice/yangxiao/cocalele/jconductor/env-pfc.sh
-nohup pfc -c /etc/pureflash/pfc.conf &
-```
-
-| 目前问题: 这个pfcli报错一直是这个`[main] ERROR com.netbric.s5.cli.CliMain - Failed: Failed RPC invoke, code:2, reason:Invalid argument: node_name`，但是我修改了代码里面唯一有包含字段"Invalid argument: node_name"的地方重新编译报错一直不变，找不到他是从哪里出来的;其实报错也可以看到执行的http命令已修改为传递id(因为climain里面修改了)，但看起来后端serve对于的地方还是没有修改。
-
-*问题原因：没有在`leader conductor`服务器上修改*
-
-更新serve端步骤:
-1. 更新后端代码并重新编译
-2. kill掉三台服务器上的conductor serve进程
-3. 重新启动serve，现在229上执行，因为默认只有一个主leader，最先执行服务的是leader，若kill掉leader上的进程默认会跳到别的服务器
-* 想要一直保持229作为主节点需要三台同时以上操作
-
-例如如下操作:
-```bash
-root@node2:/home/flyslice/yangxiao/cocalele/jconductor# ps -ef | grep pfc
-root     1168411 1128129  0 15:44 pts/0    00:00:01 java -classpath /home/flyslice/yangxiao/cocalele/jconductor/out/production/jconductor:/home/flyslice/yangxiao/cocalele/jconductor/lib/* -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=[yyyy/MM/dd H:mm:ss.SSS] -XX:+HeapDumpOnOutOfMemoryError com.netbric.s5.conductor.Main -c /etc/pureflash/pfc.conf
-root     1168483 1128129  0 15:59 pts/0    00:00:00 grep --color=auto pfc
-kill 1168411
-
-# 启动pfconductor:三个节点上分别执行
-source /home/flyslice/yangxiao/cocalele/jconductor/env-pfc.sh
-nohup pfc -c /etc/pureflash/pfc.conf &
-```
-
-- 更新到229后生效，出现新问题
-
-(2025.10.16)
-
-```bash
-flyslice@node1:~/yangxiao/cocalele/jconductor$ ./pfcli list_port -i 1
-cmd_list_port
-[main] ERROR com.netbric.s5.conductor.rpc.SimpleHttpRpc - Failed http GET http://192.168.61.229:49180/s5c/?op=list_port&id=1
-java.io.IOException: Failed RPC invoke, code:4, reason:Cannot run program "c:/eclipse/plink.exe" (in directory "."): error=2, 没有那个文件或目录
-	at com.netbric.s5.conductor.rpc.SimpleHttpRpc.invokeGET(SimpleHttpRpc.java:60)
-	at com.netbric.s5.conductor.rpc.SimpleHttpRpc.invokeConductor(SimpleHttpRpc.java:90)
-	at com.netbric.s5.cli.CliMain.cmd_list_port(CliMain.java:359)
-	at com.netbric.s5.cli.CliMain$4.run(CliMain.java:135)
-	at com.netbric.s5.cli.CliMain.main(CliMain.java:212)
-[main] ERROR com.netbric.s5.cli.CliMain - Failed: Failed RPC invoke, code:4, reason:Cannot run program "c:/eclipse/plink.exe" (in directory "."): error=2, 没有那个文件或目录
-
-```
-
-
-
+## 分析代码(1)
 ### handler下的StoreHandler.java/TenantHandler.java/VolumeHandler.java
 `StoreHandler.java`的注释里写了`backend handler of CLI s5_add_store_node.py`，应该是基于原本的`s5_add_store_node.py`文件改造的，是后端操作对于`storenode`增删检查的
 同理，`TenantHandler.java`针对tenants, `VolumeHandler`针对volume
@@ -182,6 +17,7 @@ Recovery的处理是：
 针对`test_v1 volume`查询状态不是`OK`的shard
 遍历shard中的replica，对于状态不是`OK`的slave replica
 给这个slave replica所在机器的pfstore发送recovery_replica，让其从primary拷贝数据恢复数据该slave replica
+
 
 ## 251020
 *分析代码(2)*
@@ -216,4 +52,198 @@ ClusterManager.updateSharedDisksFromZk();
 `getInstance()`方法是返回一个`S5Database instance`, 一个`S5Database`类的实例. (`jconductor/src/com/netbric/s5/orm/S5Database.java`)
 
 ### `prepareVolume`是用于`open_volume`, `recoveryVolume`, `moveVolume`的
+
+### jconductor日志启动
+启动服务
+
+```
+# cd /home/flyslice/yangxiao
+# source /home/flyslice/yangxiao/cocalele/PureFlash/build_deb/env.sh
+# nohup pfs -c /etc/pureflash/pfs.conf > /home/flyslice/yangxiao/pfstore.log 2>&1 &
+```
+
+启动 pfconductor
+```
+/home/flyslice/yangxiao/cocalele/jconductor/pfc中的CROOT=/root/v2/jconductor
+```
+修改改为`CROOT=/home/flyslice/yangxiao/cocalele/jconductor`
+
+```
+# source /home/flyslice/yangxiao/cocalele/jconductor/env-pfc.sh
+# nohup pfc -c /etc/pureflash/pfc.conf > /home/flyslice/yangxiao/pfconductor.log 2>&1 &
+```
+
+
+## 251103
+
+### 分析scrub_volume
+
+`scrubVolume`: 在`src\com\netbric\s5\conductor\Scrubber.java`
+
+这段代码定义了一个名为scrubVolume的静态方法，用于触发对指定卷（Volume）的数据擦洗（Scrub）操作，属于存储系统中保障数据一致性的核心功能。其作用是通过校验卷的所有分片（Shard）及其副本（Replica）的数据完整性，检测并标记不一致的副本，确保数据可靠性。
+
+
+用法：./pfcli scrub_volume -v volume_name
+
+
+### 分析deep_scrub_volume
+
+`deepScrubVolume`: 在`src\com\netbric\s5\conductor\Scrubber.java`
+
+#### 对比
+这两个方法 `scrubVolume` 和 `deepScrubVolume` 都是用于校验存储卷（Volume）的一致性，但在校验深度、粒度和实现细节上有明显区别，主要差异如下：
+
+
+**校验粒度不同**
+- **`scrubVolume`（普通校验）**：  
+  对每个分片（Shard）的副本（Replica）进行**整体校验**。  
+  通过调用 `calculate_replica_md5` 接口获取整个副本的 MD5 哈希值，然后与主副本（Primary Replica）的 MD5 对比，判断副本是否一致。
+
+- **`deepScrubVolume`（深度校验）**：  
+  对每个分片的副本进行**更细粒度的对象级校验**。  
+  先通过 SQL 查询获取每个副本所在存储介质（tray）的 `object_size`，然后按对象索引（`obj_idx`）遍历分片内的所有对象，调用 `calculate_object_md5` 接口获取每个对象的 MD5，再与主副本对应对象的 MD5 对比。  
+  （分片总大小 `VolumeIdUtils.SHARD_SIZE` 除以 `object_size` 得到对象总数，逐个校验）。
+
+
+**数据查询范围不同**
+- **`scrubVolume`**：  
+  查询副本时仅关联 `t_replica`（副本表）和 `t_store`（存储节点表），获取副本的基本信息（ID、存储节点 IP 等）：  
+  ```sql
+  select r.id replica_id, r.tray_uuid, replica_index, mngt_ip 
+  from t_replica r, t_store s 
+  where r.store_id=s.id and r.shard_id=? and r.status=?
+  ```
+
+- **`deepScrubVolume`**：  
+  查询时额外关联 `t_tray`（存储介质表），目的是获取 `object_size`（对象大小），用于后续按对象拆分校验：  
+  ```sql
+  select r.id replica_id, r.tray_uuid, replica_index, mngt_ip, t.object_size 
+  from t_replica r, t_store s, t_tray t 
+  where r.store_id=s.id and r.shard_id=? and r.status=? and t.uuid=r.tray_uuid
+  ```
+
+
+**异常处理细节不同**
+- **`deepScrubVolume` 多了对象大小一致性校验**：  
+  若同一分片中不同副本的 `object_size` 不一致，直接判定校验失败并终止任务：  
+  ```java
+  if(r.object_size != object_size){
+      logger.error("Failed scrub, replicas has different object size, can't continue");
+      t.status = BackgroundTaskManager.TaskStatus.FAILED;
+      return;
+  }
+  ```
+
+- **主副本缺失时的处理不同**：  
+  - `scrubVolume`：若主副本不存在或 MD5 为空，跳过该分片校验。  
+  - `deepScrubVolume`：若主副本不存在，会默认取第一个副本作为临时主副本继续校验（`primary = reps.get(0)`）。
+
+
+**任务类型标识不同**
+- `scrubVolume` 发起的任务类型为 `BackgroundTaskManager.TaskType.SCRUB`。  
+- `deepScrubVolume` 发起的任务类型为 `BackgroundTaskManager.TaskType.DEEP_SCRUB`。  
+  （用于区分任务类型，可能在任务管理、监控等场景中使用）。
+
+
+**总结**
+- **普通校验（`scrubVolume`）**：轻量、快速，校验副本整体一致性，适合日常快速检查。  
+- **深度校验（`deepScrubVolume`）**：更严格、耗时更长，校验到每个对象的一致性，能发现局部数据损坏（如单个对象异常），适合定期深度检查。
+
+
+
+### 分析recovery_volume
+
+通过`fromName`方法，`src\com\netbric\s5\orm\Volume.java`:
+
+```java
+public static Volume fromName(String tenant_name, String volume_name) {
+	return S5Database.getInstance().sql("select v.* from t_volume as v, t_tenant as t where t.id=v.tenant_id and t.name=? and v.name=?",
+			tenant_name, volume_name).first(Volume.class);
+}
+```
+
+数据库结果:
+```sql
+MariaDB [s5]> select v.* from t_volume as v, t_tenant as t where t.id=v.tenant_id;
++------------+---------+--------------+------+-------+-----------+-----------+-------------+----------+----------+----------+---------+-----------+----------+-------------+---------------------+
+| id         | name    | size         | iops | cbs   | bw        | tenant_id | quotaset_id | status   | meta_ver | features | exposed | rep_count | snap_seq | shard_size  | status_time         |
++------------+---------+--------------+------+-------+-----------+-----------+-------------+----------+----------+----------+---------+-----------+----------+-------------+---------------------+
+| 3674210304 | test_v6 | 966367641600 | 8192 |     0 | 167772160 |         1 |           0 | OK       |        0 |        0 |       0 |         2 |        1 | 68719476736 | 2025-10-30 19:29:20 |
+| 3690987520 | test_v5 | 966367641600 | 8192 | 16384 | 167772160 |         1 |           0 | OK       |        0 |        0 |       0 |         2 |        1 | 68719476736 | 2025-10-31 15:24:20 |
+| 3707764736 | test_v4 | 966367641600 | 8192 | 16384 | 167772160 |         1 |           0 | DEGRADED |        4 |        0 |       0 |         2 |        1 | 68719476736 | 2025-10-31 15:05:06 |
+| 3724541952 | test_v3 | 966367641600 | 8192 |     0 | 167772160 |         1 |           0 | OK       |        0 |        0 |       0 |         2 |        1 | 68719476736 | 2025-10-30 19:33:59 |
++------------+---------+--------------+------+-------+-----------+-----------+-------------+----------+----------+----------+---------+-----------+----------+-------------+---------------------+
+
+```
+
+- `BackgroundTaskManager`:
+
+定义了一个`BackgroundTask`类，用来管理后台任务。核心作用是避免耗时操作阻塞主线程或前端请求，同时提供任务的状态监控和管理能力。
+
+
+
+### 分析update_volume
+
+update_volume 方法是一个用于更新存储卷（Volume）信息的接口实现，主要功能是接收请求参数，对指定卷的名称、大小、IOPS（每秒输入 / 输出操作数）、带宽（bw）等属性进行更新，并处理相关的数据库事务和异常。
+
+
+### 分析move_volume
+
+用到了`RebalanceManager`:
+
+```java
+S5Database.getInstance().sql("update t_volume set status=IF((select count(*) from t_shard where status!='OK' and volume_id=?) = 0, 'OK', status)" +
+				" where id=?", v.id, v.id).execute();
+```
+
+`moveVolume` 方法的主要功能是将一个卷（Volume）的副本（Replica）从源存储位置迁移到目标存储位置
+步骤:
+1. 获取待迁移的卷对象从任务参数 task.arg 中获取当前要迁移的卷（Volume）对象 v。
+2. 查询需要迁移的副本通过数据库查询，筛选出属于当前卷（v.id）、且位于源存储节点（fromStoreId）和源 SSD（fromSsdUuid）上的所有副本（Replica），存入 repsToMove 列表。
+3. 逐个迁移副本
+先通过目标存储节点 ID（targetStoreId）获取目标存储节点对象 n。
+遍历 repsToMove 中的每个副本，调用 moveReplica 方法将副本从源位置迁移到目标存储节点 n 和目标 SSD（targetSsdUuid）。
+每迁移完一个副本，更新任务进度（task.progress），按已迁移数量占总数量的比例计算百分比。
+4. 更新卷的状态 - 迁移完成后，执行数据库更新：
+检查该卷下所有分片（t_shard）的状态，如果所有分片状态都是 OK，则将卷的状态设为 OK；否则保持原有状态。
+最后将任务进度设为 100%，标识迁移完成。
+
+
+
+### 分析check_volume_exists
+代码
+```java
+long v = S5Database.getInstance().queryLongValue("SELECT EXISTS (select v.* from t_volume as v, t_tenant as t where t.id=v.tenant_id and t.name=? and v.name=?)",
+					tenant_name, volume_name);
+```
+
+
+```sql
+SELECT EXISTS (
+  SELECT v.* 
+  FROM t_volume AS v, t_tenant AS t 
+  WHERE t.id = v.tenant_id 
+    AND t.name = 'tenant_default'  -- 字符串加单引号
+    AND v.name = 'test_v6'        -- 字符串加单引号
+);
+```
+
+这条 SQL 语句的作用是判断 “指定租户下是否存在指定名称的卷”，返回结果为 1（存在）或 0（不存在），是一种高效的 existence check（存在性检查）。
+
+
+
+
+### 查询语句, 查询某卷相关的详细信息
+查询名为 `test_v1` 的卷（`Volume`）相关的详细信息，包括其分片（`Shard`）、副本（`Replica`）、存储节点（`Store`）等关联资源的状态和属性，主要用于存储系统中排查卷的部署情况、副本分布、健康状态等问题。
+
+```sql
+select v.name volume_name, r.volume_id volume_id, d.id shard_id, d.shard_index shard_index, r.replica_id replica_id, r.replica_index replica_index, mngt_ip store_ip, is_primary, s.id store_id, 
+r.status rstatus, v.status vstatus, s.status sstatus, d.status dstatus  
+from 
+v_replica_ext r, t_volume v,t_store s, t_tray t, t_shard d 
+where r.store_id=s.id and t.uuid=r.tray_uuid and d.volume_id=r.volume_id and d.volume_id=v.id and d.id=r.shard_id and v.name='test_v1'   
+ORDER BY shard_id ASC;
+
+```
+
 

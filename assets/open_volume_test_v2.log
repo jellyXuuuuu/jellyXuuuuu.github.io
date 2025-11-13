@@ -1,0 +1,845 @@
+[2025/10/29 11:05:51.551] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.S5RestfulHandler - API called: op=/s5c/?op=open_volume&volume_name=test_v2
+[2025/10/29 11:05:51.572] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - Prepare volume:test_v2 on node:192.168.61.229, {
+  "op": "prepare_volume",
+  "status": "OK",
+  "volume_name": "test_v2",
+  "volume_size": 966367641600,
+  "volume_id": 3556769792,
+  "shard_count": 15,
+  "rep_count": 2,
+  "meta_ver": 0,
+  "snap_seq": 1,
+  "shards": [
+    {
+      "index": 0,
+      "replicas": [
+        {
+          "id": 3556769792,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769793,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 1,
+      "replicas": [
+        {
+          "id": 3556769808,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769809,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 2,
+      "replicas": [
+        {
+          "id": 3556769824,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769825,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 3,
+      "replicas": [
+        {
+          "id": 3556769840,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769841,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 4,
+      "replicas": [
+        {
+          "id": 3556769856,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769857,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 5,
+      "replicas": [
+        {
+          "id": 3556769872,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769873,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 6,
+      "replicas": [
+        {
+          "id": 3556769888,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769889,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 7,
+      "replicas": [
+        {
+          "id": 3556769904,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769905,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 8,
+      "replicas": [
+        {
+          "id": 3556769920,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769921,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 9,
+      "replicas": [
+        {
+          "id": 3556769936,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769937,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "ae6582a5-fd11-446c-a8de-22eb7a8a6540",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 10,
+      "replicas": [
+        {
+          "id": 3556769952,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769953,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 11,
+      "replicas": [
+        {
+          "id": 3556769968,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769969,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 12,
+      "replicas": [
+        {
+          "id": 3556769984,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769985,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 13,
+      "replicas": [
+        {
+          "id": 3556770000,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556770001,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "ae6582a5-fd11-446c-a8de-22eb7a8a6540",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 14,
+      "replicas": [
+        {
+          "id": 3556770016,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556770017,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    }
+  ],
+  "features": 0
+}
+[2025/10/29 11:05:51.583] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - Get response:{"op":"prepare_volume_reply","reason":"","ret_code":0}
+[2025/10/29 11:05:51.584] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - Succeed prepare_volume:test_v2 on node:192.168.61.229
+[2025/10/29 11:05:51.585] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - Prepare volume:test_v2 on node:192.168.61.122, {
+  "op": "prepare_volume",
+  "status": "OK",
+  "volume_name": "test_v2",
+  "volume_size": 966367641600,
+  "volume_id": 3556769792,
+  "shard_count": 15,
+  "rep_count": 2,
+  "meta_ver": 0,
+  "snap_seq": 1,
+  "shards": [
+    {
+      "index": 0,
+      "replicas": [
+        {
+          "id": 3556769792,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769793,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 1,
+      "replicas": [
+        {
+          "id": 3556769808,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769809,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 2,
+      "replicas": [
+        {
+          "id": 3556769824,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769825,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 3,
+      "replicas": [
+        {
+          "id": 3556769840,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769841,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 4,
+      "replicas": [
+        {
+          "id": 3556769856,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769857,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 5,
+      "replicas": [
+        {
+          "id": 3556769872,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769873,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 6,
+      "replicas": [
+        {
+          "id": 3556769888,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769889,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 7,
+      "replicas": [
+        {
+          "id": 3556769904,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769905,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 8,
+      "replicas": [
+        {
+          "id": 3556769920,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769921,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 9,
+      "replicas": [
+        {
+          "id": 3556769936,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769937,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "ae6582a5-fd11-446c-a8de-22eb7a8a6540",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 10,
+      "replicas": [
+        {
+          "id": 3556769952,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769953,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 11,
+      "replicas": [
+        {
+          "id": 3556769968,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769969,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "88c73032-9b6b-493c-b826-2fccb4e245dd",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 12,
+      "replicas": [
+        {
+          "id": 3556769984,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556769985,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    },
+    {
+      "index": 13,
+      "replicas": [
+        {
+          "id": 3556770000,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "d46569d5-a82a-47a3-b34d-608c8afb5e06",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556770001,
+          "index": 1,
+          "store_id": 2,
+          "tray_uuid": "ae6582a5-fd11-446c-a8de-22eb7a8a6540",
+          "status": "OK",
+          "rep_ports": "192.168.61.143"
+        }
+      ],
+      "primary_rep_index": 1,
+      "status": "OK"
+    },
+    {
+      "index": 14,
+      "replicas": [
+        {
+          "id": 3556770016,
+          "index": 0,
+          "store_id": 1,
+          "tray_uuid": "7054366f-c8f1-404f-925e-09bb04288df1",
+          "status": "OK",
+          "rep_ports": "192.168.61.229"
+        },
+        {
+          "id": 3556770017,
+          "index": 1,
+          "store_id": 3,
+          "tray_uuid": "b4f726d1-fffb-444a-89f9-814314acc680",
+          "status": "OK",
+          "rep_ports": "192.168.61.122"
+        }
+      ],
+      "primary_rep_index": 0,
+      "status": "OK"
+    }
+  ],
+  "features": 0
+}
+[2025/10/29 11:05:51.594] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - Get response:{"op":"prepare_volume_reply","reason":"","ret_code":0}
+[2025/10/29 11:05:51.594] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - Succeed prepare_volume:test_v2 on node:192.168.61.122
+[2025/10/29 11:05:51.596] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - 2 ports found 
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - shard cnt:15
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.143
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.143,192.168.61.229
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.143
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.143,192.168.61.229
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.143
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.143,192.168.61.229
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.143
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.143,192.168.61.229
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.122
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.143,192.168.61.229
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.122
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.143,192.168.61.229
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.122
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.143,192.168.61.229
+[2025/10/29 11:05:51.601] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.VolumeHandler - store_ips:192.168.61.229,192.168.61.122
+[2025/10/29 11:05:51.602] [pool-1-thread-14] INFO com.netbric.s5.conductor.handler.S5RestfulHandler - {
+  "status": "OK",
+  "volume_name": "test_v2",
+  "volume_size": 966367641600,
+  "volume_id": 3556769792,
+  "shard_count": 15,
+  "rep_count": 2,
+  "meta_ver": 0,
+  "snap_seq": -1,
+  "shards": [
+    {
+      "index": 0,
+      "store_ips": "192.168.61.229,192.168.61.143",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 1,
+      "store_ips": "192.168.61.143,192.168.61.229",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 2,
+      "store_ips": "192.168.61.229,192.168.61.143",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 3,
+      "store_ips": "192.168.61.143,192.168.61.229",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 4,
+      "store_ips": "192.168.61.229,192.168.61.143",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 5,
+      "store_ips": "192.168.61.143,192.168.61.229",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 6,
+      "store_ips": "192.168.61.229,192.168.61.143",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 7,
+      "store_ips": "192.168.61.143,192.168.61.229",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 8,
+      "store_ips": "192.168.61.229,192.168.61.122",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 9,
+      "store_ips": "192.168.61.143,192.168.61.229",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 10,
+      "store_ips": "192.168.61.229,192.168.61.122",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 11,
+      "store_ips": "192.168.61.143,192.168.61.229",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 12,
+      "store_ips": "192.168.61.229,192.168.61.122",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 13,
+      "store_ips": "192.168.61.143,192.168.61.229",
+      "status": "OK",
+      "is_shareddisk": 0
+    },
+    {
+      "index": 14,
+      "store_ips": "192.168.61.229,192.168.61.122",
+      "status": "OK",
+      "is_shareddisk": 0
+    }
+  ],
+  "shard_lba_cnt_order": 36,
+  "op": "open_volume_reply",
+  "ret_code": 0
+}

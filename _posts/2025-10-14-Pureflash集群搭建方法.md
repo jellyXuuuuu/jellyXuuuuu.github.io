@@ -26,18 +26,34 @@ deb-src http://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted univers
 deb-src http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
 ```
 
+## 修改DNS
+```
+sudo vi /etc/resolv.conf
+# 增加以下
+nameserver 8.8.8.8
+```
+
 ## 安装依赖软件包
 
 ```
 apt update && apt install cgdb curl gzip jq libaio1 libcurl4   libibverbs1 libicu-dev libjsoncpp25 librdmacm1 readline-common libstdc++6 libtool  libuuid1 tar unzip  util-linux vim wget  net-tools  ninja-build libcurl4-openssl-dev libcppunit-dev uuid-dev libaio-dev nasm autoconf cmake librdmacm-dev pkg-config g++ default-jdk ant meson libssl-dev ncurses-dev libnuma-dev help2man python3-pip libfuse3-dev
 apt update && apt upgrade cgdb curl gzip jq libaio1 libcurl4   libibverbs1 libicu-dev libjsoncpp25 librdmacm1 readline-common libstdc++6 libtool  libuuid1 tar unzip  util-linux vim wget  net-tools  ninja-build libcurl4-openssl-dev libcppunit-dev uuid-dev libaio-dev nasm autoconf cmake librdmacm-dev pkg-config g++ default-jdk ant meson libssl-dev ncurses-dev libnuma-dev help2man python3-pip libfuse3-dev
 
+apt install git
 pip3 install pyelftools 
+apt install putty-tools # 需要plink
 ```
+
+<!-- ## (虚机里)关闭防火墙
+```
+# 默认开启防火墙，git clone无法访问口443，需关闭
+sudo ufw disable
+``` -->
 
 ## 下载编译pureflash
 
 ```
+mkdir -p /home/flyslice/yangxiao/cocalele/
 cd /home/flyslice/yangxiao/cocalele/
 git clone https://github.com/cocalele/PureFlash.git
 cd PureFlash/
@@ -100,9 +116,9 @@ dataDir=/var/lib/zookeeper/data
 # the port at which the clients will connect
 clientPort=2181
 # list of cluster servers
-server.1=192.168.61.229:2888:3888
-server.2=192.168.61.143:2888:3888
-server.3=192.168.61.122:2888:3888
+server.1=192.168.61.3:2888:3888
+server.2=192.168.61.195:2888:3888
+server.3=192.168.61.34:2888:3888
 
 # 启动zookeeper, 每台机器执行
 /opt/apache-zookeeper-3.7.2-bin/bin/zkServer.sh start
@@ -114,6 +130,8 @@ server.3=192.168.61.122:2888:3888
 /opt/apache-zookeeper-3.7.2-bin/bin/zkCli.sh -server 192.168.61.229:2181
 /opt/apache-zookeeper-3.7.2-bin/bin/zkCli.sh -server 192.168.61.143:2181
 /opt/apache-zookeeper-3.7.2-bin/bin/zkCli.sh -server 192.168.61.122:2181
+
+/opt/apache-zookeeper-3.7.2-bin/bin/zkCli.sh -server 192.168.61.3:2181
 
 # 停止服务, 可选执行
 /opt/apache-zookeeper-3.7.2-bin/bin/zkServer.sh stop
@@ -152,6 +170,25 @@ wsrep_node_name = "node1"  # 在第二个节点改为 "node2"，第三个改为 
 wsrep_node_address = "192.168.61.229" # 在第二个节点改为 "node2_ip"，第三个改为 "node3_ip"
 wsrep_sst_method = rsync 
 wsrep_sst_auth = "sst_user:your_secure_password"
+
+
+```bash
+[mysqld]
+binlog_format = ROW
+default-storage-engine = InnoDB
+innodb_autoinc_lock_mode = 2
+bind-address = 0.0.0.0
+
+wsrep_on = ON
+wsrep_provider = /usr/lib/galera/libgalera_smm.so
+wsrep_cluster_name = "my_galera_cluster"
+wsrep_cluster_address = "gcomm://192.168.61.3,192.168.61.195,192.168.61.34"
+wsrep_node_name = "node1"
+wsrep_node_address = "192.168.61.3"
+wsrep_sst_method = rsync
+wsrep_sst_auth = "sst_user:your_secure_password"
+```
+
 
 # 确保MariaDB已停止, 第一个节点执行
 systemctl stop mariadb
@@ -248,6 +285,7 @@ systemctl enable keepalived
 
 # 在主节点上使用ip addr show [interface]命令查看配置的VIP是否已经绑定到指定的网络接口上
 ip addr show eno2
+<!-- ens18 -->
 ```
 
 ## 创建配置文件
@@ -312,11 +350,20 @@ nohup pfs -c /etc/pureflash/pfs.conf &
 ```
 
 ## 启动 pfconductor
+修改pfc
+```
+JCROOT=/home/flyslice/yangxiao/cocalele/jconductor
+```
 
 ```
 source /home/flyslice/yangxiao/cocalele/jconductor/env-pfc.sh
-nohup pfc -c /etc/pureflash/pfc.conf &
+nohup pfc -c /etc/pureflash/pfc.conf > /home/flyslice/yangxiao/pfconductor.log 2>&1 &
+
+<!-- nohup pfc -c /etc/pureflash/pfc.conf & -->
 ```
+
+启动顺序：
+db、zk、conductor、pfstore
 
 ## 附录
 
@@ -448,3 +495,61 @@ poller_count=8
 conn_type=tcp
 count=4
 ```
+
+
+注:
+虚拟机中搭建必须也要分配至少一个盘，可以通过虚拟机管理器分配，然后用`lsblk`查看
+
+```
+root@flyslice-Standard-PC-i440FX-PIIX-1996:/home/flyslice/yangxiao/cocalele/jconductor# lsblk
+NAME   MAJ:MIN RM    SIZE RO TYPE MOUNTPOINTS
+loop0    7:0    0      4K  1 loop /snap/bare/5
+loop1    7:1    0     55M  1 loop /snap/core18/1880
+loop2    7:2    0   55.5M  1 loop /snap/core18/2959
+loop3    7:3    0  255.6M  1 loop /snap/gnome-3-34-1804/36
+loop4    7:4    0  218.4M  1 loop /snap/gnome-3-34-1804/93
+loop5    7:5    0   91.7M  1 loop /snap/gtk-common-themes/1535
+loop6    7:6    0   62.1M  1 loop /snap/gtk-common-themes/1506
+loop7    7:7    0   49.8M  1 loop /snap/snap-store/467
+loop8    7:8    0   29.9M  1 loop /snap/snapd/8542
+sda      8:0    0      1T  0 disk 
+├─sda1   8:1    0    512M  0 part /boot/efi
+├─sda2   8:2    0      1K  0 part 
+└─sda5   8:5    0 1023.5G  0 part /
+sdb      8:16   0     32G  0 disk 
+sr0     11:0    1    2.6G  0 rom
+```
+
+这里都用sdb作为盘，写入pfs配置文件，并重新运行pfs。
+
+```
+<!-- vi /etc/pureflash/pfs.conf -->
+[cluster]
+name=cluster1
+[zookeeper]
+ip=192.168.61.3:2181,192.168.61.195:2181,192.168.61.34:2181
+[afs]
+mngt_ip=192.168.61.3
+id=1
+meta_size=10737418240
+[engine]
+name=aio
+#name=spdk
+[tray.0]
+dev=/dev/sdb
+#dev=/dev/nvme0n1     # path of physical flash device
+#dev=trtype:PCIE traddr:0000.03.00.0
+[tray.1]
+#dev=/dev/nvme1n1
+#dev=trtype:PCIE traddr:0000.04.00.0
+[port.0]
+ip=192.168.61.3
+[rep_port.0]
+ip=192.168.61.3
+[tcp_server]
+poller_count=8
+[replicator]
+conn_type=tcp
+count=4
+```
+
