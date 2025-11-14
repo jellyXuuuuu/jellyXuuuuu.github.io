@@ -763,3 +763,4 @@ private static void cmd_handle_error(Namespace cmd, Config cfg) throws Exception
 }
 ```
 
+### add_store/delete_store不开发了，因为环境集群没加，只加元数据没意义。
